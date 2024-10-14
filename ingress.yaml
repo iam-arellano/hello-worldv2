@@ -4,7 +4,7 @@ metadata:
   name: ingress-helloworld
 spec:
   rules:
-  - host: "my.project"         # domain
+  - host: "my.projectapp"         # domain
     http:
       paths:
       - pathType: Prefix

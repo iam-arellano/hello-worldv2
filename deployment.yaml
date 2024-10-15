@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: c-helloworld
-        image: raemondarellano/hello-worldv2:1.0.0-3
+        image: raemondarellano/hello-worldv2:1.0.0-4
         ports:
         - containerPort: 8080

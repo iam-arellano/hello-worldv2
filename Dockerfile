@@ -8,6 +8,6 @@ RUN chown -R $USER:www-data /var/www/html/*
 
 RUN chmod -R 775 /var/www/html/*
 
-EXPOSE 80
+EXPOSE 8080
 
 CMD ["apache2ctl", "-D", "FOREGROUND"]

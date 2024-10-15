@@ -80,7 +80,7 @@ pipeline {
                    git commit -m "Updated Deployment Manifest"
                 """
                 withCredentials([gitUsernamePassword(credentialsId: 'github_token', gitToolName: 'Default')]) {
-                  sh "git pushhttps://github.com/iam-arellano/hello-worldv2.git  main"
+                  sh "git push https://github.com/iam-arellano/hello-worldv2.git  main"
                 }
             }
         }

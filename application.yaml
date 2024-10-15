@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myapp-helloworldapp-argocd
+  name: myapp-helloworldappv2-argocd
   namespace: argocd
 spec:
   project: default
 
   source:
-    repoURL: https://github.com/iam-arellano/hello-world.git
+    repoURL: https://github.com/iam-arellano/hello-worldv2.git
     targetRevision: HEAD
     path: .                   # path of your yaml manifest
   destination:

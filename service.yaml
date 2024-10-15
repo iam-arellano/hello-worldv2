@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-helloworld
+  name: service-helloworldv2
 spec:
   selector:
-    app: app-helloworld
+    app: app-helloworldv2
   type: LoadBalancer
   ports:
     - port: 80

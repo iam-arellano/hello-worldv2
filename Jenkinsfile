@@ -5,7 +5,7 @@ pipeline {
         // SCANNER_HOME= tool 'sonar-scanner'                      
         
         /// THIS IS FOR DOCKER CRED TO PUSH 
-        APP_NAME = "hello-world"      
+        APP_NAME = "hello-worldv2"      
         RELEASE = "1.0.0"
         DOCKER_USER = "raemondarellano"
         DOCKER_PASS = 'jenkins-docker-credentials'              
@@ -23,7 +23,7 @@ pipeline {
 
         stage("Checkout from SCM"){
                 steps {
-                    git branch: 'main', credentialsId: 'github', url: 'https://github.com/iam-arellano/hello-world.git'
+                    git branch: 'main', credentialsId: 'github', url: 'https://github.com/iam-arellano/hello-worldv2.git'
                     echo 'Git Checkout Completed'
                 }
         }
@@ -46,7 +46,7 @@ pipeline {
         stage("Trivy Scan") {
            steps {
                script {
-	            sh ('docker run -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy image raemondarellano/hello-world:latest --no-progress --scanners vuln  --exit-code 0 --severity HIGH,CRITICAL --format table')
+	            sh ('docker run -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy image raemondarellano/hello-worldv2:latest --no-progress --scanners vuln  --exit-code 0 --severity HIGH,CRITICAL --format table')
                }
            }
        }
@@ -80,7 +80,7 @@ pipeline {
                    git commit -m "Updated Deployment Manifest"
                 """
                 withCredentials([gitUsernamePassword(credentialsId: 'github_token', gitToolName: 'Default')]) {
-                  sh "git push https://github.com/iam-arellano/hello-world.git  main"
+                  sh "git pushhttps://github.com/iam-arellano/hello-worldv2.git  main"
                 }
             }
         }
